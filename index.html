@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Visual Saliency of Dynamic Point Cloud</title>
+  <meta name="description" content="Project page for two companion papers on visual saliency for dynamic point clouds: task-dependent and task-free." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <!-- Header / Hero -->
+  <header class="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 text-white">
+    <div class="mx-auto max-w-6xl px-6 py-16 lg:py-20">
+      <nav class="flex items-center justify-between">
+        <a href="#top" class="text-lg font-semibold tracking-tight">VSDPC</a>
+        <div class="hidden gap-6 text-sm md:flex">
+          <a href="#about" class="hover:opacity-80">About</a>
+          <a href="#papers" class="hover:opacity-80">Papers</a>
+          <a href="#teaser" class="hover:opacity-80">Teaser & Toggle</a>
+          <a href="#media" class="hover:opacity-80">Visualizations</a>
+          <a href="#links" class="hover:opacity-80">Links</a>
+          <a href="#contact" class="hover:opacity-80">Contact</a>
+        </div>
+      </nav>
+      <div class="mt-10 grid items-center gap-10 md:grid-cols-2">
+        <div>
+          <h1 class="text-3xl font-extrabold leading-tight sm:text-4xl md:text-5xl">Visual Saliency of <span class="text-indigo-300">Dynamic Point Cloud</span></h1>
+          <p class="mt-4 max-w-xl text-slate-200">A companion project page for two studies on visual attention in 6‑DoF VR: <em>task‑dependent</em> saliency and a complementary <em>task‑free</em> dataset & analysis. Click the teaser image to switch between conditions.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#papers" class="rounded-2xl bg-indigo-500 px-5 py-2.5 text-sm font-semibold text-white shadow ring-1 ring-indigo-400/50 transition hover:bg-indigo-400">Read the papers</a>
+            <a href="#teaser" class="rounded-2xl bg-white/10 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur ring-1 ring-white/20 transition hover:bg-white/20">See the teaser</a>
+          </div>
+        </div>
+        <figure class="relative">
+          <!-- Replace src with your preferred hero/summary image -->
+          <img id="hero-img" src="images/hero_placeholder.jpg" alt="Visual saliency overview for dynamic point clouds" class="w-full rounded-3xl border border-white/10 shadow-2xl" />
+          <figcaption class="mt-3 text-xs text-slate-300">Replace <code>images/hero_placeholder.jpg</code> with your overview image.</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="pointer-events-none absolute left-1/2 top-0 -z-10 h-64 w-[120vw] -translate-x-1/2 bg-gradient-to-b from-indigo-500/20 to-transparent blur-3xl"></div>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="mx-auto max-w-5xl px-6 py-12 lg:py-16">
+    <h2 class="text-2xl font-bold tracking-tight">What is this about?</h2>
+    <p class="mt-4 leading-relaxed text-slate-700">This page presents two tightly related efforts studying <strong>visual saliency for dynamic point clouds</strong> in <strong>6‑DoF virtual reality</strong>. The first work focuses on <em>task‑dependent</em> viewing, where participants perform explicit tasks while we capture gaze and head motion. The second introduces a <em>task‑free</em> dataset and comparison—revealing how attention patterns differ when observers freely explore content without a task. Together, these studies provide actionable insights for <abbr title="Point Cloud Quality Assessment">PCQA</abbr>, compression, streaming, and interaction design.</p>
+  </section>
+
+  <!-- Papers -->
+  <section id="papers" class="mx-auto max-w-6xl px-6 py-8">
+    <h2 class="text-2xl font-bold tracking-tight">Papers</h2>
+    <div class="mt-6 grid gap-6 md:grid-cols-2">
+      <!-- Paper 1 -->
+      <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h3 class="text-lg font-semibold">QAVA‑DPC: Eye‑Tracking Based Quality Assessment and Visual Attention Dataset for Dynamic Point Cloud in 6 DoF</h3>
+        <p class="mt-2 text-sm text-slate-600">IEEE ISMAR 2023</p>
+        <div class="mt-4 flex flex-wrap gap-3 text-sm">
+          <a class="rounded-xl border border-slate-200 px-3 py-1.5 hover:bg-slate-50" href="https://github.com/cwi-dis/ISMAR_PointCloud_EyeTracking" target="_blank" rel="noopener">GitHub Repo</a>
+          <a class="rounded-xl border border-slate-200 px-3 py-1.5 hover:bg-slate-50" href="https://ir.cwi.nl/pub/33460/" target="_blank" rel="noopener">CWI Record</a>
+        </div>
+        <p class="mt-4 text-sm leading-relaxed text-slate-700">A task‑dependent study collecting raw gaze and attention maps in VR for pristine and distorted contents, enabling saliency‑assisted quality assessment.</p>
+      </article>
+
+      <!-- Paper 2 -->
+      <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h3 class="text-lg font-semibold">Comparison of Visual Saliency for Dynamic Point Clouds: Task‑free vs. Task‑dependent</h3>
+        <p class="mt-2 text-sm text-slate-600">IEEE TVCG / IEEE VR 2025</p>
+        <div class="mt-4 flex flex-wrap gap-3 text-sm">
+          <a class="rounded-xl border border-slate-200 px-3 py-1.5 hover:bg-slate-50" href="https://www.computer.org/csdl/journal/tg/2025/05/10922128/251sRG7OVGg" target="_blank" rel="noopener">Journal Page</a>
+          <a class="rounded-xl border border-slate-200 px-3 py-1.5 hover:bg-slate-50" href="https://www.researchgate.net/publication/389771271_Comparison_of_Visual_Saliency_for_Dynamic_Point_Clouds_Task-free_vs_Task-dependent" target="_blank" rel="noopener">Preprint / RG</a>
+          <a class="rounded-xl border border-slate-200 px-3 py-1.5 hover:bg-slate-50" href="https://www.dis.cwi.nl/news/2025-04-12-dis-group-at-ieee-vr-2025/" target="_blank" rel="noopener">DIS News</a>
+        </div>
+        <p class="mt-4 text-sm leading-relaxed text-slate-700">A task‑free dataset and comparative analysis highlighting condition‑dependent saliency differences and their implications for perception and evaluation.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Teaser with toggle (click image or use button) -->
+  <section id="teaser" class="mx-auto max-w-6xl px-6 py-12">
+    <div class="grid items-start gap-8 md:grid-cols-[1.2fr,0.8fr]">
+      <figure class="relative">
+        <!-- Replace these two image files with your teaser pair -->
+        <img id="teaser-img" src="images/teaser_task_dependent.jpg" alt="Teaser: task-dependent saliency" class="w-full cursor-pointer rounded-3xl border border-slate-200 shadow-lg transition" />
+        <figcaption class="mt-3 text-xs text-slate-600">Click the image (or use the toggle) to switch between <strong>Task‑dependent</strong> and <strong>Task‑free</strong> visualizations. Replace the files under <code>images/</code> with your own.</figcaption>
+      </figure>
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h3 class="text-lg font-semibold">Interactive Comparison</h3>
+        <p class="mt-2 text-sm text-slate-700">Toggle between conditions to inspect differences in attention distribution.</p>
+        <div class="mt-4 flex items-center gap-3">
+          <span class="text-xs font-medium text-slate-600">Task‑dependent</span>
+          <label class="relative inline-flex cursor-pointer items-center">
+            <input id="teaser-toggle" type="checkbox" class="peer sr-only" aria-label="Toggle task‑free" />
+            <div class="peer h-7 w-12 rounded-full bg-slate-200 after:absolute after:left-1 after:top-1 after:h-5 after:w-5 after:rounded-full after:bg-white after:transition-all peer-checked:bg-indigo-500 peer-checked:after:translate-x-5"></div>
+          </label>
+          <span class="text-xs font-medium text-slate-600">Task‑free</span>
+        </div>
+        <div class="mt-4 text-xs text-slate-500">Current view: <span id="teaser-state" class="font-semibold text-slate-700">Task‑dependent</span></div>
+        <div class="mt-6 flex gap-3">
+          <button id="btn-task-dep" class="rounded-xl border border-slate-200 px-3 py-1.5 text-sm hover:bg-slate-50">Show Task‑dependent</button>
+          <button id="btn-task-free" class="rounded-xl border border-slate-200 px-3 py-1.5 text-sm hover:bg-slate-50">Show Task‑free</button>
+        </div>
+        <ul class="mt-6 list-disc space-y-1 pl-5 text-sm text-slate-600">
+          <li>Image filenames used by default: <code>teaser_task_dependent.jpg</code> and <code>teaser_task_free.jpg</code>.</li>
+          <li>Keep both images the same pixel size for a fair visual comparison.</li>
+          <li>You can also replace the teaser with an animated GIF or MP4 and still use the toggle to swap sources.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visualizations per paper -->
+  <section id="media" class="mx-auto max-w-6xl px-6 pb-12">
+    <h2 class="text-2xl font-bold tracking-tight">Visualizations</h2>
+    <div class="mt-6 grid gap-6 md:grid-cols-2">
+      <figure class="rounded-3xl border border-slate-200 bg-white p-4 shadow-sm">
+        <!-- Replace src with your figure for Paper 1 (task-dependent) -->
+        <img src="images/paper1_visualization.jpg" alt="Task‑dependent saliency visualization" class="w-full rounded-2xl" />
+        <figcaption class="mt-2 text-sm text-slate-600">Paper 1 (Task‑dependent): replace <code>paper1_visualization.jpg</code> with your figure.</figcaption>
+      </figure>
+      <figure class="rounded-3xl border border-slate-200 bg-white p-4 shadow-sm">
+        <!-- Replace src with your figure for Paper 2 (task-free) -->
+        <img src="images/paper2_visualization.jpg" alt="Task‑free saliency visualization" class="w-full rounded-2xl" />
+        <figcaption class="mt-2 text-sm text-slate-600">Paper 2 (Task‑free): replace <code>paper2_visualization.jpg</code> with your figure.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Related links & citations -->
+  <section id="links" class="mx-auto max-w-6xl px-6 pb-16">
+    <h2 class="text-2xl font-bold tracking-tight">Related Links & Papers</h2>
+    <div class="mt-4 grid gap-4 md:grid-cols-2">
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h4 class="text-sm font-semibold">Project & Datasets</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a class="text-indigo-600 hover:underline" href="https://github.com/cwi-dis/ISMAR_PointCloud_EyeTracking" target="_blank" rel="noopener">QAVA‑DPC GitHub Repository</a></li>
+          <li><a class="text-indigo-600 hover:underline" href="https://ir.cwi.nl/pub/33460/" target="_blank" rel="noopener">CWI Publication Record (ISMAR 2023)</a></li>
+          <li><a class="text-indigo-600 hover:underline" href="https://www.computer.org/csdl/journal/tg/2025/05/10922128/251sRG7OVGg" target="_blank" rel="noopener">IEEE TVCG Page (Task‑free vs. Task‑dependent, 2025)</a></li>
+          <li><a class="text-indigo-600 hover:underline" href="https://www.dis.cwi.nl/news/2025-04-12-dis-group-at-ieee-vr-2025/" target="_blank" rel="noopener">DIS News: IEEE VR 2025</a></li>
+        </ul>
+      </div>
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h4 class="text-sm font-semibold">Reference Project Page Style</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a class="text-indigo-600 hover:underline" href="https://lukas.uzolas.com/Articulated-Point-NeRF/" target="_blank" rel="noopener">Articulated‑Point‑NeRF (example page)</a></li>
+          <li><a class="text-indigo-600 hover:underline" href="https://github.com/lukasuz/Articulated-Point-NeRF" target="_blank" rel="noopener">Articulated‑Point‑NeRF (code)</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="border-t border-slate-200 bg-white">
+    <div class="mx-auto max-w-6xl px-6 py-10">
+      <h2 class="text-2xl font-bold tracking-tight">Contact</h2>
+      <p class="mt-3 text-sm text-slate-700">For questions about the datasets, code, or figures on this page, please contact <strong>Xuemei Zhou</strong> &lt;<a class="text-indigo-600 hover:underline" href="mailto:xuemei.zhou@cwi.nl">xuemei.zhou@cwi.nl</a>&gt;.</p>
+      <p class="mt-1 text-xs text-slate-500">Distributed & Interactive Systems (DIS), CWI — Science Park 123, 1098 XG Amsterdam, NL</p>
+    </div>
+  </section>
+
+  <footer class="bg-slate-900 py-8 text-slate-300">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 md:flex-row">
+      <p class="text-xs">© <span id="year"></span> Visual Saliency of Dynamic Point Cloud.</p>
+      <div class="flex items-center gap-3 text-xs">
+        <a href="#top" class="rounded-xl bg-white/10 px-3 py-1.5 ring-1 ring-white/15 hover:bg-white/20">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Teaser toggle logic
+    const teaserImg = document.getElementById('teaser-img');
+    const teaserToggle = document.getElementById('teaser-toggle');
+    const teaserState = document.getElementById('teaser-state');
+    const btnTaskDep = document.getElementById('btn-task-dep');
+    const btnTaskFree = document.getElementById('btn-task-free');
+
+    const srcTaskDep = 'images/teaser_task_dependent.jpg';
+    const srcTaskFree = 'images/teaser_task_free.jpg';
+
+    function setTeaser(isFree) {
+      teaserImg.src = isFree ? srcTaskFree : srcTaskDep;
+      teaserImg.alt = isFree ? 'Teaser: task-free saliency' : 'Teaser: task-dependent saliency';
+      teaserState.textContent = isFree ? 'Task‑free' : 'Task‑dependent';
+      teaserToggle.checked = isFree;
+    }
+
+    // Click image to toggle
+    teaserImg.addEventListener('click', () => setTeaser(!teaserToggle.checked));
+
+    // Switch with checkbox
+    teaserToggle.addEventListener('change', (e) => setTeaser(e.target.checked));
+
+    // Buttons
+    btnTaskDep.addEventListener('click', () => setTeaser(false));
+    btnTaskFree.addEventListener('click', () => setTeaser(true));
+
+    // Ensure we start on Task-dependent
+    setTeaser(false);
+  </script>
+</body>
+</html>
