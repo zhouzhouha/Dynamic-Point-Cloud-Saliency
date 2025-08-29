@@ -162,36 +162,26 @@
             width: 80%;
             max-width: 900px;
             margin: 0 auto;
-            height: 400px; /* Fixed height for proper positioning */
             text-align: center;
         }
         
         .comparison-image {
             width: 100%;
             border-radius: 8px;
-            position: absolute;
-            top: 0;
-            left: 0;
             transition: opacity 0.5s ease-in-out;
-        }
-
-        .comparison-image.active {
-            opacity: 1;
-            z-index: 1;
+            display: none;
         }
         
-        .comparison-image:not(.active) {
-            opacity: 0;
-            z-index: 0;
+        .comparison-image.active {
+            display: block;
+            opacity: 1;
         }
         
         #comparisonCaption {
-            position: absolute;
-            bottom: -40px;
-            left: 0;
-            right: 0;
             font-weight: bold;
             text-align: center;
+            margin-top: 0.5rem;
+            position: relative;
         }
         
         .toggle-btn {
@@ -360,7 +350,7 @@
         <h2>Comparison of Results</h2>
         
         <!-- Inline sentence + button -->
-        <p style="text-align:center; font-size:1rem; margin-bottom:1rem;">
+        <p style="text-align:center; font-size:1rem; margin-bottom:0.5rem;">
             Click the button to view the task-free scenario: 
             <button class="toggle-btn" id="toggleResults" style="padding:5px 10px; font-size:0.9rem; vertical-align:middle; margin-left:0.5rem;">
                 View Task-Free
@@ -369,7 +359,7 @@
 
         <!-- Image container -->
         <div class="comparison-image-box">
-            <img id="imgTaskDependent" src="images/teaser_task_dependent.jpg" alt="Task-dependent result" class="comparison-image active">
+            <img id="imgTaskDependent" src="images/teaser_task_depedent.jpg" alt="Task-dependent result" class="comparison-image active">
             <img id="imgTaskFree" src="images/teaser_task_free.jpg" alt="Task-free result" class="comparison-image">
             <p class="caption" id="comparisonCaption" >Task-dependent</p>
         </div>
