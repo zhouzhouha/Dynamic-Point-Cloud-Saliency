@@ -378,21 +378,33 @@
     </section>
 
     <section id="comparison">
-        <div class="container">
-            <h2>Comparison of Results</h2>
-            <p>Click the button below to toggle between the task-dependent and task-free visual saliency results:</p>
-            
-            <div class="image-toggle">
-                <button class="toggle-btn" id="toggleResults">Show Task-Free Results</button>
+    <div class="container">
+        <h2>Comparison of Results</h2>
+        <p>Click the button to see the task-free scenario results:</p>
+
+        <div class="comparison-row">
+            <!-- Left: Teaser image -->
+            <div class="comparison-image-box">
+                <img src="images/teaser_task_dependent.jpg" alt="Task-dependent teaser" class="comparison-image teaser">
+                <p class="caption">Task-dependent teaser</p>
             </div>
-            
-            <div class="comparison-container">
-                <img src="https://via.placeholder.com/800x400?text=Task-Dependent+Results" alt="Task-dependent results" class="comparison-image active" id="imgTaskDependent">
-                <img src="https://via.placeholder.com/800x400?text=Task-Free+Results" alt="Task-free results" class="comparison-image" id="imgTaskFree">
+
+            <!-- Right: Button to show task-free result -->
+            <div class="comparison-button-box">
+                <button class="toggle-btn" id="toggleResults">
+                    ✅ Task-Free Scenario
+                </button>
+
+                <!-- Hidden task-free image -->
+                <div class="comparison-result" id="taskFreeResult" style="display:none; margin-top:1rem;">
+                    <img src="images/teaser_task_free.jpg" alt="Task-free result" class="comparison-image">
+                    <p class="caption">Task-free result</p>
+                </div>
             </div>
-            <p class="caption" id="comparisonCaption">Figure 3: Visual saliency results for task-dependent condition.</p>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <section id="related">
         <div class="container">
@@ -453,7 +465,6 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const toggleButton = document.getElementById('toggleResults');
-            const imgTaskDependent = document.getElementById('imgTaskDependent');
             const imgTaskFree = document.getElementById('imgTaskFree');
             const comparisonCaption = document.getElementById('comparisonCaption');
             
@@ -461,16 +472,14 @@
             
             toggleButton.addEventListener('click', function() {
                 if (showingTaskDependent) {
-                    imgTaskDependent.classList.remove('active');
                     imgTaskFree.classList.add('active');
-                    comparisonCaption.textContent = 'Figure 3: Visual saliency results for task-free condition.';
-                    toggleButton.textContent = 'Show Task-Dependent Results';
+                    comparisonCaption.textContent = "Task-free scenario image";
+                    toggleButton.textContent = "Show Task-Dependent Scenario ❌";
                     showingTaskDependent = false;
                 } else {
                     imgTaskFree.classList.remove('active');
-                    imgTaskDependent.classList.add('active');
-                    comparisonCaption.textContent = 'Figure 3: Visual saliency results for task-dependent condition.';
-                    toggleButton.textContent = 'Show Task-Free Results';
+                    comparisonCaption.textContent = "Task-dependent teaser image";
+                    toggleButton.textContent = "Show Task-Free Scenario ✅";
                     showingTaskDependent = true;
                 }
             });
