@@ -159,26 +159,55 @@
         
         .comparison-image-box {
             position: relative;
+            width: 80%;
+            max-width: 900px;
+            margin: 0 auto;
+            height: 400px; /* Fixed height for proper positioning */
+            text-align: center;
         }
         
         .comparison-image {
             width: 100%;
-            height: auto; /* Maintain aspect ratio */
             border-radius: 8px;
+            position: absolute;
+            top: 0;
+            left: 0;
             transition: opacity 0.5s ease-in-out;
+        }
+
+        .comparison-image.active {
+            opacity: 1;
+            z-index: 1;
+        }
+        
+        .comparison-image:not(.active) {
+            opacity: 0;
+            z-index: 0;
+        }
+        
+        #comparisonCaption {
+            position: absolute;
+            bottom: -40px;
+            left: 0;
+            right: 0;
+            font-weight: bold;
+            text-align: center;
         }
         
         .toggle-btn {
-            background-color: #3498db;
+            padding: 8px 16px;
+            background-color: #2c3e50;
             color: white;
             border: none;
-            border-radius: 5px;
-            transition: 0.3s;
+            border-radius: 4px;
             cursor: pointer;
+            font-size: 1rem;
+            margin-left: 10px;
+            vertical-align: middle;
         }
         
         .toggle-btn:hover {
-            background-color: #2980b9;
+            background-color: #3498db;
         }
                     
      
@@ -339,10 +368,10 @@
         </p>
 
         <!-- Image container -->
-        <div class="comparison-image-box" style="position:relative; width:80%; max-width:900px; margin:0 auto; height:auto; text-align:center;">
-            <img id="imgTaskDependent" src="images/teaser_task_dependent.jpg" alt="Task-dependent result" class="comparison-image active" style="width:100%; border-radius:8px; position:absolute; top:0; left:0; transition:opacity 0.5s;">
-            <img id="imgTaskFree" src="images/teaser_task_free.jpg" alt="Task-free result" class="comparison-image" style="width:100%; border-radius:8px; position:absolute; top:0; left:0; opacity:0; transition:opacity 0.5s;">
-            <p class="caption" id="comparisonCaption" style="position:relative; margin-top:400px; font-weight:bold;">Task-dependent</p>
+        <div class="comparison-image-box">
+            <img id="imgTaskDependent" src="images/teaser_task_dependent.jpg" alt="Task-dependent result" class="comparison-image active">
+            <img id="imgTaskFree" src="images/teaser_task_free.jpg" alt="Task-free result" class="comparison-image">
+            <p class="caption" id="comparisonCaption" >Task-dependent</p>
         </div>
     </div>
 </section>
@@ -417,28 +446,32 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    const toggleButton = document.getElementById('toggleResults');
-    const imgDependent = document.getElementById('imgTaskDependent');
-    const imgFree = document.getElementById('imgTaskFree');
-    const caption = document.getElementById('comparisonCaption');
-
-    let showingDependent = true;
-
-    toggleButton.addEventListener('click', function() {
-        if (showingDependent) {
-            imgDependent.style.opacity = 0;
-            imgFree.style.opacity = 1;
-            caption.textContent = "Task-free";
-            showingDependent = false;
-        } else {
-            imgDependent.style.opacity = 1;
-            imgFree.style.opacity = 0;
-            caption.textContent = "Task-dependent";
-            showingDependent = true;
-        }
-    });
-});
+         document.addEventListener('DOMContentLoaded', function() {
+            const toggleButton = document.getElementById('toggleResults');
+            const imgTaskDependent = document.getElementById('imgTaskDependent');
+            const imgTaskFree = document.getElementById('imgTaskFree');
+            const comparisonCaption = document.getElementById('comparisonCaption');
+            
+            let showingTaskDependent = true;
+            
+            toggleButton.addEventListener('click', function() {
+                if (showingTaskDependent) {
+                    // Switch to task-free view
+                    imgTaskDependent.classList.remove('active');
+                    imgTaskFree.classList.add('active');
+                    comparisonCaption.textContent = 'Task-free';
+                    toggleButton.textContent = 'View Task-Dependent';
+                    showingTaskDependent = false;
+                } else {
+                    // Switch to task-dependent view
+                    imgTaskFree.classList.remove('active');
+                    imgTaskDependent.classList.add('active');
+                    comparisonCaption.textContent = 'Task-dependent';
+                    toggleButton.textContent = 'View Task-Free';
+                    showingTaskDependent = true;
+                }
+            });
+        });
     </script>
 </body>
 </html>
