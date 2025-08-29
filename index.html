@@ -41,15 +41,29 @@
         .video-row {
             display: flex;
             justify-content: center;
-            gap: 1rem; /* space between videos */
-            flex-wrap: wrap; /* so on small screens they stack */
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .video-box {
+            text-align: center;
+            flex: 1 1 22%; /* each video takes ~22% of width */
+        }
+        
+        .video-box video {
+            width: 100%;
+            max-width: 300px; /* make them larger but controlled */
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+        }
+        
+        .video-caption {
+            margin-top: 0.5rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #3498db; /* nice highlight blue */
         }
 
-        .video-row video {
-            width: 22%;   /* 4 videos per row, adjust if needed */
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-        }
 
         header {
             background-color: var(--primary-color);
@@ -244,21 +258,39 @@
     <div class="container">
         <h2>Video Demonstrations</h2>
         <div class="video-row">
-            <video autoplay loop muted playsinline>
-                <source src="images/Dancer_C0_R0_FrontView.mp4" type="video/mp4">
-            </video>
-            <video autoplay loop muted playsinline>
-                <source src="images/Dancer_C3_R3_FrontView.mp4" type="video/mp4">
-            </video>
-            <video autoplay loop muted playsinline>
-                <source src="images/Dancer_FrontView.mp4" type="video/mp4">
-            </video>
-            <video autoplay loop muted playsinline>
-                <source src="images/Dancer_BackView.mp4" type="video/mp4">
-            </video>
+            
+            <div class="video-box">
+                <video autoplay loop muted playsinline>
+                    <source src="images/Dancer_C0_R0_FrontView.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">Reference</p>
+            </div>
+            
+            <div class="video-box">
+                <video autoplay loop muted playsinline>
+                    <source src="images/Dancer_C3_R3_FrontView.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">Distorted</p>
+            </div>
+            
+            <div class="video-box">
+                <video autoplay loop muted playsinline>
+                    <source src="images/Dancer_FrontView.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">Front View</p>
+            </div>
+            
+            <div class="video-box">
+                <video autoplay loop muted playsinline>
+                    <source src="images/Dancer_BackView.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">Back View</p>
+            </div>
+
         </div>
     </div>
 </section>
+
 
 
 
