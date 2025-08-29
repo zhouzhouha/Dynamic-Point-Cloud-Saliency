@@ -159,17 +159,12 @@
         
         .comparison-image-box {
             position: relative;
-            height: 400px; /* adjust to your image height */
-            margin-bottom:2rem;
         }
         
         .comparison-image {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
-            object-fit: contain;
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 8px;
             transition: opacity 0.5s ease-in-out;
         }
         
@@ -344,7 +339,7 @@
         </p>
 
         <!-- Image container -->
-        <div class="comparison-image-box" style="position:relative; width:80%; max-width:800px; margin:0 auto; height:auto; text-align:center;">
+        <div class="comparison-image-box" style="position:relative; width:80%; max-width:900px; margin:0 auto; height:auto; text-align:center;">
             <img id="imgTaskDependent" src="images/teaser_task_dependent.jpg" alt="Task-dependent result" class="comparison-image active" style="width:100%; border-radius:8px; position:absolute; top:0; left:0; transition:opacity 0.5s;">
             <img id="imgTaskFree" src="images/teaser_task_free.jpg" alt="Task-free result" class="comparison-image" style="width:100%; border-radius:8px; position:absolute; top:0; left:0; opacity:0; transition:opacity 0.5s;">
             <p class="caption" id="comparisonCaption" style="position:relative; margin-top:400px; font-weight:bold;">Task-dependent</p>
