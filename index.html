@@ -157,37 +157,34 @@
             text-align: center;
         }
         
+        .comparison-image-box {
+            position: relative;
+            height: 400px; /* adjust to your image height */
+        }
+        
+        .comparison-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: opacity 0.5s ease-in-out;
+        }
+        
         .toggle-btn {
-            background-color: var(--secondary-color);
+            background-color: #3498db;
             color: white;
             border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+            border-radius: 5px;
+            transition: 0.3s;
         }
         
         .toggle-btn:hover {
             background-color: #2980b9;
         }
-        
-        .comparison-container {
-            position: relative;
-            max-width: 100%;
-            margin: 0 auto;
-        }
-        
-        .comparison-image {
-            display: none;
-            width: 100%;
-            transition: opacity 0.5s;
-        }
-        
-        .comparison-image.active {
-            display: block;
-        }
-        
+            
+     
         .caption {
             font-style: italic;
             color: #666;
@@ -332,29 +329,24 @@
         </div>
     </section>
     
-    <section id="comparison">
+   <section id="comparison">
     <div class="container">
         <h2>Comparison of Results</h2>
-        <p>Click the button to see the task-free scenario results:</p>
+        <p>Click the button to view the task-free scenario:</p>
 
-        <div class="comparison-row">
-            <!-- Left: Teaser image -->
-            <div class="comparison-image-box">
-                <img src="images/teaser_task_depedent.jpg" alt="Task-dependent result" class="comparison-image teaser">
-                <p class="caption">Task-dependent </p>
+        <div class="comparison-row" style="display:flex; align-items:center; gap:2rem; flex-wrap:wrap;">
+            <!-- Image container -->
+            <div class="comparison-image-box" style="flex:1; text-align:center; position:relative;">
+                <img id="imgTaskDependent" src="images/teaser_task_dependent.jpg" alt="Task-dependent result" class="comparison-image active" style="width:100%; border-radius:8px; position:absolute; top:0; left:0; transition:opacity 0.5s;">
+                <img id="imgTaskFree" src="images/teaser_task_free.jpg" alt="Task-free result" class="comparison-image" style="width:100%; border-radius:8px; position:absolute; top:0; left:0; opacity:0; transition:opacity 0.5s;">
+                <p class="caption" id="comparisonCaption" style="position:relative; margin-top:220px;">Task-dependent</p>
             </div>
 
-            <!-- Right: Button to show task-free result -->
-            <div class="comparison-button-box">
-                <button class="toggle-btn" id="toggleResults">
-                    ✅ Task-Free Scenario
+            <!-- Button -->
+            <div class="comparison-button-box" style="flex:1; text-align:center;">
+                <button class="toggle-btn" id="toggleResults" style="padding:10px 20px; font-size:1rem; cursor:pointer;">
+                    View Task-Free Scenario
                 </button>
-
-                <!-- Hidden task-free image -->
-                <div class="comparison-result" id="taskFreeResult" style="display:none; margin-top:1rem;">
-                    <img src="images/teaser_task_free.jpg" alt="Task-free result" class="comparison-image">
-                    <p class="caption">Task-free </p>
-                </div>
             </div>
         </div>
     </div>
@@ -364,7 +356,7 @@
     <section id="related">
     <div class="container">
         <h2>Publications & Resources</h2>
-
+        <h3>Publications</h3>
         <ul class="reference-list">
             <li>
                 <strong>QAVA-DPC_Eye-Tracking_Based_Quality_Assessment_and_Visual_Attention_Dataset_for_Dynamic_Point_Cloud_in_6_DoF</strong><br>
@@ -431,26 +423,27 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const toggleButton = document.getElementById('toggleResults');
-            const imgTaskFree = document.getElementById('imgTaskFree');
-            const comparisonCaption = document.getElementById('comparisonCaption');
-            
-            let showingTaskDependent = true;
-            
-            toggleButton.addEventListener('click', function() {
-                if (showingTaskDependent) {
-                    imgTaskFree.classList.add('active');
-                    comparisonCaption.textContent = "Task-free scenario image";
-                    toggleButton.textContent = "Show Task-Dependent Scenario ❌";
-                    showingTaskDependent = false;
-                } else {
-                    imgTaskFree.classList.remove('active');
-                    comparisonCaption.textContent = "Task-dependent teaser image";
-                    toggleButton.textContent = "Show Task-Free Scenario ✅";
-                    showingTaskDependent = true;
-                }
-            });
+        const toggleButton = document.getElementById('toggleResults');
+        const imgDependent = document.getElementById('imgTaskDependent');
+        const imgFree = document.getElementById('imgTaskFree');
+        const caption = document.getElementById('comparisonCaption');
+    
+        let showingDependent = true;
+    
+        toggleButton.addEventListener('click', function() {
+            if (showingDependent) {
+                imgDependent.style.opacity = 0;
+                imgFree.style.opacity = 1;
+                caption.textContent = "Task-free";
+                showingDependent = false;
+            } else {
+                imgDependent.style.opacity = 1;
+                imgFree.style.opacity = 0;
+                caption.textContent = "Task-dependent";
+                showingDependent = true;
+            }
         });
+    });
     </script>
 </body>
 </html>
