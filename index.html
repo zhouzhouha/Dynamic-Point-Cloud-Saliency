@@ -214,13 +214,30 @@
             text-decoration: underline;
         }
         
-        .contact-info {
-            margin-top: 1.5rem;
+        .contact-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem; /* space between columns */
+            flex-wrap: wrap; /* wrap on small screens */
         }
         
-        .contact-info p {
+        .contact-box {
+            flex: 1 1 45%; /* each box takes ~45% width */
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .contact-box h3 {
+            color: #3498db; /* highlight title */
             margin-bottom: 0.5rem;
         }
+        
+        .contact-box p {
+            margin-bottom: 0.5rem;
+        }
+
         
         footer {
             background-color: var(--dark-color);
@@ -396,24 +413,34 @@
     </section>
 
     <section id="contact">
-        <div class="container">
-            <h2>Contact</h2>
-            <p>For collaboration opportunities about this research, please contact:</p>
-            <div class="contact-info">
-                <p><strong>Pablo Cesar, Irene Viola</strong></p>
-                <p>Affiliation: CWI </p>
-                <p>Email: pablo.cesar@cwi.nl, irene.viola@cwi.nl</p>
+    <div class="container">
+        <h2>Contact</h2>
+        <div class="contact-row">
+
+            <div class="contact-box">
+                <h3>Collaboration Opportunities</h3>
+                <p>For collaboration opportunities about this research, please contact:</p>
+                <div class="contact-info">
+                    <p><strong>Pablo Cesar, Irene Viola</strong></p>
+                    <p>Affiliation: CWI </p>
+                    <p>Email: pablo.cesar@cwi.nl, irene.viola@cwi.nl</p>
+                </div>
             </div>
-            
-            <p>For questions about this research, please contact:</p>
-            
-            <div class="contact-info">
-                <p><strong>Your Name</strong></p>
-                <p>Affiliation: CWI & TU Delft</p>
-                <p>Email: xuemei.zhou@cwi.nl</p>
+
+            <div class="contact-box">
+                <h3>Questions</h3>
+                <p>For questions about this research, please contact:</p>
+                <div class="contact-info">
+                    <p><strong>Your Name</strong></p>
+                    <p>Affiliation: CWI & TU Delft</p>
+                    <p>Email: xuemei.zhou@cwi.nl</p>
+                </div>
             </div>
+
         </div>
-    </section>
+    </div>
+</section>
+
 
     <footer>
         <div class="container">
