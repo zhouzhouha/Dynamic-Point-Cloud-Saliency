@@ -64,6 +64,14 @@
             color: #3498db; /* nice highlight blue */
         }
 
+        .video-container video {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+
 
         header {
             background-color: transparent;
@@ -364,11 +372,13 @@
     <section id="experimental">
     <div class="container">
         <h2>Experimental Design</h2>
-        
+
+         <div class="video-container">
             <video autoplay loop muted playsinline>
                 <source src="images/experiment_compressed.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
+        </div>     
     </div>
 </section>
 
