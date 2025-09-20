@@ -131,6 +131,23 @@
             }
         }
 
+        /* Add these styles to your existing CSS */
+        .caption-note {
+            font-style: italic;
+            color: #666;
+            text-align: center;
+            margin-top: 0.25rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* If you want to style the main caption differently */
+        .image-container .caption {
+            font-weight: bold;
+            font-style: normal;
+            margin-bottom: 0;
+        }
+
 
 
         header {
@@ -491,6 +508,19 @@
         </div>
     </div>
 </section>
+
+    
+    <section id="results">
+        <div class="container">
+            <h2>Results</h2>
+            
+            <div class="image-container">
+                <img src="images/saliency_comparison.jpg" alt="Comparison of Visual Saliency Maps">
+                <p class="caption">Comparison Consistency of Visual Saliency Map</p>
+                <p class="caption-note">Higher value means two saliency maps are more similar</p>
+            </div>
+        </div>
+    </section>
 
 
     <section id="related">
