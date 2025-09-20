@@ -77,6 +77,50 @@
         }
 
 
+        /* Add these styles to your existing CSS */
+        .image-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 5%; /* This creates 5% gap between images (total 10% gap space) */
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+        
+        .image-item {
+            flex: 0 0 30%; /* Each image takes exactly 30% width */
+            text-align: center;
+        }
+        
+        .image-item img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 4px;
+            background: transparent;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .image-caption {
+            margin-top: 0.5rem;
+            font-style: italic;
+            color: #666;
+        }
+        
+        /* Responsive adjustments for mobile */
+        @media (max-width: 768px) {
+            .image-item {
+                flex: 0 0 100%; /* Stack vertically on mobile */
+                margin-bottom: 1.5rem;
+            }
+            
+            .image-row {
+                gap: 0; /* Remove gap on mobile */
+            }
+        }
+
+
 
         header {
             background-color: transparent;
@@ -373,6 +417,33 @@
             </div>
         </div>
     </section>
+
+    <!-- Add this section after the Apparatus section -->
+    <section id="data-process">
+        <div class="container">
+            <h2>Data Process</h2>
+            
+            <div class="image-row">
+                <div class="image-item">
+                    <img src="images/step1.png" alt="Data Collection">
+                    <p class="image-caption">Data Collection: Angular Error Estimation</p>
+                </div>
+                
+                <div class="image-item">
+                    <img src="images/step2.png" alt="Data Processing">
+                    <p class="image-caption"> Gaze Point Identification</p>
+                </div>
+                
+                <div class="image-item">
+                    <img src="images/step3.png" alt="Data Analysis">
+                    <p class="image-caption">Truncated-Cone-Sector</p>
+                </div>
+            </div>
+            
+            <p>Each stage of our data processing pipeline is carefully designed to maintain data integrity while extracting meaningful insights about visual attention patterns in dynamic point cloud environments.</p>
+        </div>
+    </section>
+    
 
 <!--     <section id="experimental">
         <div class="container">
